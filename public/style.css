@@ -41,3 +41,39 @@ section {
   margin-top: 0;
 }
 
+.card {
+  width: 175px;
+  font-size: 12px;
+  
+}
+
+.katie-image {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card-state{
+  display: flex;
+  align-items: center;
+
+}
+
+.card-star{
+  height: 14px;
+}
+
+.gray {
+  color: #E5E5E5;
+}
+h2 {
+  font-size: 0.75rem;
+  font-weight: normal;
+
+}
+.bold {
+  font-weight: bold;
+}
+ 
+
+
+
