@@ -38,7 +38,7 @@ export default function Card() {
               alt="Star icon" 
             />
             <span>5.0</span>
-            <span className="gray">(6) .</span>
+            <span className="gray">(6)&#183;</span>
             <span className="gray">USA</span>
           </div>
           <h2>Life lessons with Katie Zaferes</h2>
