@@ -20,31 +20,43 @@ Notes:
   this data into the component.
 */
 
-export default function Card() {
-    return (
-        <div className="card">
-          <div>
-            <img 
-              src="../images/image-katie.png" 
-              className="katie-image"
-              alt="Main card image."
-            />
-            <p>Sold out</p>
-          </div>
-          <div className="card-state">
-            <img 
-              src="../images/star-1.png" 
-              className="card-star"
-              alt="Star icon" 
-            />
-            <span>5.0</span>
-            <span className="gray">(6)&#183;</span>
-            <span className="gray">USA</span>
-          </div>
-          <h2>Life lessons with Katie Zaferes</h2>
-          <p><span className="bold">From 136$</span>/ person</p>
-          
-        </div>
-          
-    );
+export default function Card(props) {
+  let badgeText
+  if (props.openSpots === 0){
+    badgeText = "SOLD OUT"
+  } else if (props.location === "Online"){
+    badgeText= "ONLINE"
+  }
+
+  
+
+   /*
+    Challenge:
+    1. Display the correct text in the badge based on the logic above
+    2. Only display the badge if badgeText has a value
+    */
+    
+  return (
+    <div className="card">
+      {badgeText && <div className="card-badge">{badgeText}</div>}
+      <img src={`../images/${props.img}`}className="card-image"/>
+        
+      
+      <div className="card-stats">
+        <img 
+          src="../images/star-1.png" 
+          className="card-star"
+          alt="Star icon" 
+        />
+        <span>{props.rating}</span>
+        <span className="gray">({props.reviewCount})&#183;</span>
+        <span className="gray">{props.location}</span>
+      </div>
+      
+      <p className="card--title">{props.title}</p>
+      <p className="card--price"><span className="bold">From ${props.price}</span>/ person</p>
+      
+    </div>
+      
+  );
 }
